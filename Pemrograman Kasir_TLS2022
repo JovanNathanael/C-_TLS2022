@@ -1,0 +1,92 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+int pilihan, jmlbarang, harga, total, bayar, diskon;
+string item;
+    
+    cout << "               DTETI MART              " << endl;
+    cout << "           Selamat Berbelanja          " << endl;
+    cout << "=======================================" << endl;
+    cout << "=======================================" << endl;
+    cout << "               DAFTAR BARANG           " << endl;
+    cout << "1. Indomie      : Rp. 3000" << endl;
+    cout << "2. Mizone       : Rp. 5000" << endl;
+    cout << "3. Chitato      : Rp. 4000" << endl;
+    cout << "4. Silver Queen : Rp. 10000"<< endl;
+    cout << "5. Air Mineral  : Rp. 2500" << endl;
+    cout << "6. Selesai" << endl;
+    cout << "=======================================" << endl << endl;
+    
+    do{
+        cout << "Masukkan no barang pilihan : ";
+        cin  >> pilihan; 
+     
+        switch(pilihan){
+            case 1 :
+                item = "Indomie";
+                harga = 3000;
+                cout << "jumlah barang : ";
+                cin >> jmlbarang;
+                total += harga * jmlbarang;
+                cout << jmlbarang << " " << item << " = Rp." << harga * jmlbarang << endl << endl;
+                break;
+            case 2 :
+                item = "Mizone";
+                harga = 5000;
+                cout << "jumlah barang : ";
+                cin >> jmlbarang;
+                total += harga * jmlbarang;
+                cout << jmlbarang << " " << item << " = Rp." << harga * jmlbarang << endl << endl;
+                break;
+            case 3 :
+            item = "Chitato";
+                harga = 4000;
+                cout << "jumlah barang : ";
+                cin >> jmlbarang;
+                total += harga * jmlbarang;
+                cout << jmlbarang << " " << item << " = Rp." << harga * jmlbarang << endl << endl;
+                break;
+            case 4 :
+            item = "Silver Queen";
+                harga = 10000;
+                cout << "jumlah barang : ";
+                cin >> jmlbarang;
+                total += harga * jmlbarang;
+                cout << jmlbarang << " " << item << " = Rp." << harga * jmlbarang << endl << endl;
+                break;
+            case 5 :
+            item = "Air Mineral";
+                harga = 2500;
+                cout << "jumlah barang : ";
+                cin >> jmlbarang;
+                total += harga * jmlbarang;
+                cout << jmlbarang << " " << item << " = Rp." << harga * jmlbarang << endl << endl;
+                break;
+            case 6 :
+                cout << endl << endl;
+                cout << "================================================" << endl;
+                cout << "Jumlah Bayar : " << total << endl;
+                
+                if (total >= 150000){
+                      diskon = 0.5 * total;
+                }else if(total >= 100000){
+                      diskon = 0.3 * total;
+                }else if(total >= 50000){
+                      diskon = 0.1 * total;
+                }else {
+                      diskon = 0;
+                }
+                cout << "Diskon : " << diskon << endl;
+                cout << "Total Bayar : " << total - diskon << endl;
+                cout << "Bayar : ";
+                cin  >> bayar;
+                cout << "Kembali : " << (bayar - (total-diskon)) << endl;
+                break;
+            default :
+                cout << "Pilihan Anda Salah!" << endl;
+                break;
+        }
+    }while(pilihan != 6);
+    cout << "Terima Kasih!" << endl;
+}
